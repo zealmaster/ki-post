@@ -13,8 +13,17 @@ export async function getStaticProps() {
     },
   };
 }
+interface PostData {
+  title: string;
+  date: string;
+  id: string;
+  // other properties...
+}
 
-export default function Home({ allPostsData }) {
+interface HomeProps {
+  allPostsData: PostData[];
+}
+export default function Home({ allPostsData }: HomeProps) {
   return (
     <Layout home>
       <Head>
@@ -23,7 +32,7 @@ export default function Home({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <p>kI here! I am a beginner in Next.js. Looking forward to a wonderful experience using this framework.</p>
         <p>
-          I will be taking more tutorials here =>{' '}
+          I will be taking more tutorials here &rarr; {' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.
         </p>
       </section>
