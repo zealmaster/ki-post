@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import { Button } from '@mui/material';
 
 const name = 'Kingsley';
 export const siteTitle = 'KI post';
@@ -26,7 +27,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <div className={`${utilStyles.heading2Xl} ${utilStyles.sticky_header}`}>{siteTitle}</div>
+        <div className={`${utilStyles.heading2Xl} ${utilStyles.sticky_header}`}><Button href={'/'} variant="outlined">{siteTitle}</Button></div>
         {home ? (
           <>
           <div >
